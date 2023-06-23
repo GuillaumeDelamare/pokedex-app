@@ -10,10 +10,10 @@ describe('PokemonTypesPipe', () => {
 
   it('should transform no type', () => {
     // ARRANGE
-    let type: Type[] = [];
+    const type: Type[] = [];
 
     // ACT
-    let result = pipe.transform(type, '-');
+    const result = pipe.transform(type, '-');
 
     // ASSERT
     expect(result).toBe('');
@@ -21,7 +21,7 @@ describe('PokemonTypesPipe', () => {
 
   it('should transform one type', () => {
     // ARRANGE
-    let type: Type[] = [
+    const type: Type[] = [
       {
         slot: 1,
         type: {
@@ -32,7 +32,7 @@ describe('PokemonTypesPipe', () => {
     ];
 
     // ACT
-    let result = pipe.transform(type, '; ');
+    const result = pipe.transform(type, '; ');
 
     // ASSERT
     expect(result).toBe('fire');
@@ -40,7 +40,7 @@ describe('PokemonTypesPipe', () => {
 
   it('should transform more type', () => {
     // ARRANGE
-    let type: Type[] = [
+    const type: Type[] = [
       {
         slot: 1,
         type: {
@@ -58,7 +58,7 @@ describe('PokemonTypesPipe', () => {
     ];
 
     // ACT
-    let result = pipe.transform(type, ', ');
+    const result = pipe.transform(type, ', ');
 
     // ASSERT
     expect(result).toBe('water, fairy');

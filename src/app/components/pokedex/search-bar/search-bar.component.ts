@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { PokedexService } from 'src/app/services/pokedex.service';
+import { PokedexService } from '../../../services/pokedex.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,5 +15,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    console.log(form.value)
   }
 }

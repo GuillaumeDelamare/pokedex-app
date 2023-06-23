@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonResponse } from 'src/app/interfaces/PokemonResponse';
-import { PokedexService } from 'src/app/services/pokedex.service';
+import { PokemonResponse } from '../../..//interfaces/PokemonResponse';
+import { PokedexService } from '../../../services/pokedex.service';
 
 @Component({
   selector: 'app-result-display',
@@ -19,5 +19,5 @@ export class ResultDisplayComponent implements OnInit {
 
   onPreviousPokemon() {
   }
-  
+
 }
