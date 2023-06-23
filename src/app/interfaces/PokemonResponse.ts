@@ -315,14 +315,14 @@ export interface Stat {
     stat: Stat;
 }
 
-export interface Type {
+export interface TypeInformation {
     name: string;
     url: string;
 }
 
 export interface Type {
-    slot: number;
-    type: Type;
+  slot: number;
+  type: TypeInformation;
 }
 
 export interface PokemonResponse {
