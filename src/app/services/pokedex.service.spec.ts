@@ -200,6 +200,9 @@ describe('PokedexService', () => {
       service.getPokemonInfos('unNomDePokemon');
 
       // ASSERT
+      const request = httpController.expectOne('https://pokeapi.co/api/v2/pokemon/unNomDePokemon');
+      expect(request.request.method).toEqual('GET');
+
       expect(service.currentPokemon.getValue()).toBe(REPONSE);
     });
   });
