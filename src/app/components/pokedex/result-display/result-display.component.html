@@ -1,0 +1,31 @@
+<button *ngIf="currentPokemon" class="switch-pokemon" [disabled]="currentPokemon.id <= 1" (click)="onPreviousPokemon()">{{'<<'}}</button>
+<div *ngIf="currentPokemon; else noPokemon" class="result">
+    <div class="pokemon-sprite">
+        <img [src]="'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' + currentPokemon.id.toString().padStart(3, '0') + '.png'" alt="Pokemon default sprite">
+        <span class="pokemon-id" [ngStyle]="{'font-size': 4 - (currentPokemon.id.toString().length / 2) + 'vh'}">#{{currentPokemon.id}}</span>
+    </div>
+    <div class="pokemon-detail-name">
+        <label>name:</label>
+        <span>{{currentPokemon.name | capitalize}}</span>
+    </div>
+    <div class="pokemon-detail-height">
+        <label>height:</label>
+        <span>{{currentPokemon.height}}</span>
+    </div>
+    <div class="pokemon-detail-weight">
+        <label>weight:</label>
+        <span>{{currentPokemon.weight}}</span>
+    </div>
+    <div class="pokemon-detail-types">
+        <label>types:</label>
+        <span>{{currentPokemon.types | pokemonTypes:", "}}</span>
+    </div>
+    <div class="pokemon-detail-abilities">
+        <label>abilities:</label>
+        <span *ngFor="let ability of currentPokemon.abilities">{{ability.ability.name | capitalize}}</span>
+    </div>
+</div>
+<button *ngIf="currentPokemon" class="switch-pokemon" [disabled]="currentPokemon.id >= 1010" (click)="onNextPokemon()">{{'>>'}}</button>
+<ng-template #noPokemon>
+    <div class="no-result">No Pokemon yet!</div>
+</ng-template>

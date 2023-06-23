@@ -1,0 +1,141 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+:host > div {
+    width: 70vw;
+    height: 70vh;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 5vh;
+    font-family: monospace;
+    font-size: 4vh;
+}
+
+.result {
+    background-color: rgb(157, 41, 41);
+    display: grid;
+    gap: 10px;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+    grid-template-areas: "SPRITE SPRITE SPRITE NAME NAME"
+                        "SPRITE SPRITE SPRITE HEIGHT WEIGHT"
+                        "SPRITE SPRITE SPRITE TYPES TYPES"
+                        "SKILLS SKILLS SKILLS SKILLS SKILLS"
+                        "SKILLS SKILLS SKILLS SKILLS SKILLS";
+}
+
+div[class^="pokemon-detail"] {
+    border-radius: 1vh;
+    padding-bottom: 0.5vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    background-color: rgb(48, 48, 48);
+}
+
+div[class^="pokemon-detail"] > label {
+    position: absolute;
+    color: yellowgreen;
+    top: 1vh;
+    left: 1vw;
+    font-size: 1rem;
+}
+
+div[class^="pokemon-detail"] > span {
+    color: white;
+}
+
+.pokemon-sprite {
+    position: relative;
+    grid-area: SPRITE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 4vh 1vh 1vh 1vh;
+}
+
+.pokemon-sprite > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.pokemon-sprite > .pokemon-id {
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    height: 5vh;
+    width: 5vh;
+    background-color: rgb(48, 48, 48);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    color: yellowgreen;
+    border: 1px solid yellowgreen
+}
+
+.pokemon-detail-name {
+    grid-area: NAME;
+    border-radius: 1vh 4vh 1vh 1vh!important;
+    overflow: hidden;
+}
+
+.pokemon-detail-height {
+    grid-area: HEIGHT;
+}
+
+.pokemon-detail-weight {
+    grid-area: WEIGHT;
+}
+
+.pokemon-detail-types {
+    grid-area: TYPES;
+}
+
+.pokemon-detail-abilities {
+    grid-area: SKILLS;
+    border-radius: 1vh 1vh 4vh 4vh!important;
+    display: grid!important;
+    padding: 2vh 2vw!important;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    color: white;
+}
+
+.pokemon-detail-abilities > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch-pokemon {
+    font-size: 2rem;
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 100%;
+    background-color: rgb(14, 10, 95);
+    color: white;
+}
+
+.switch-pokemon:disabled {
+    filter: brightness(0.6);
+    opacity: 0.6;
+}
+
+.switch-pokemon:not([disabled]):hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+.no-result {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,54 @@
+form {
+    background-color: rgb(14, 10, 95);
+    color: white;
+    border-radius: 99999999px;
+    height: 20vh;
+    padding: 1vh 1vw;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    height: 90%;
+    background-color: rgb(42, 42, 42);
+    border: none;
+    appearance: none;
+    outline: none;
+    color: white;
+    font-size: 4vh;
+    text-align: right;
+    padding-right: 2vw;
+    border-radius: 99999px 0 0 99999px;
+}
+
+input:focus {
+    appearance: none;
+}
+
+button {
+    border: none;
+    height: 100%;
+    margin: 10% 0;
+    padding: 1rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 100%;
+    filter: invert(0.8);
+}
+
+button:not([disabled]):hover {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+button:disabled {
+    filter: invert(0.2);
+}
+
+button > img {
+    height: 100%;
+}
